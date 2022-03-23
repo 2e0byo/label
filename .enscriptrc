@@ -1,0 +1,11 @@
+# Media definitions:
+#	name                     width	height llx	lly	urx	ury
+Media:  LargeLabel         252	  108	   20	  10	252	98
+Media:  MultiPurposeLabel  58     144    -2    4   58  144
+
+DefaultMedia: MultiPurposeLabel
+Printer: Dymo_LabelWriter_310
+#Font: Courier-Bold16
+
+
+
