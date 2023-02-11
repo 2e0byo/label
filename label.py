@@ -30,10 +30,12 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--multipage", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("-n", help="Number of copies.", type=int, default=1)
     parser.add_argument("MSG", nargs="+")
     args = parser.parse_args()
     msg = format_msg(" ".join(args.MSG), multipage=args.multipage)
     if not args.dry_run:
-        run(PRINT_CMD, input=msg, encoding="utf8")
+        for _ in range(args.n):
+            run(PRINT_CMD, input=msg, encoding="utf8")
     else:
         print(msg)
