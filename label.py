@@ -7,7 +7,7 @@ from textwrap import wrap
 
 LINE_LENGTH = 12
 MAX_LINES = 3
-PRINT_CMD = "enscript -fCourier-Bold16 --no-header -r".split(" ")
+PRINT_CMD = "enscript -#{} -fCourier-Bold16 --no-header -r"
 
 
 def format_msg(msg, multipage=False):
@@ -35,7 +35,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     msg = format_msg(" ".join(args.MSG), multipage=args.multipage)
     if not args.dry_run:
-        for _ in range(args.n):
-            run(PRINT_CMD, input=msg, encoding="utf8")
+        run(PRINT_CMD.format(args.n).split(" "), input=msg, encoding="utf8")
     else:
         print(msg)
