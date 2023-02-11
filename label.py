@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 from argparse import ArgumentParser
+from itertools import chain
 from subprocess import run
 from textwrap import wrap
-from itertools import chain
 
 LINE_LENGTH = 12
 MAX_LINES = 3
